@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+/* Intro page styles */
+.intro-page {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-button {
+    position: relative;
+    padding: 12px 60px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 6px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.enter-button:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    transition: all 0.2s ease-out;
+}
+
+.enter-button:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+.enter-button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    transform: skewX(-20deg);
+}
+
+/* Portfolio page styles */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: fixed;
+    filter: blur(8px);
+    transform: scale(1.1);
+}
+
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100vh); /* Start from bottom of screen */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.10);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    animation: slideFromBottom 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideFromBottom {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid white;
+}
+
+.name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                 0 0 20px rgba(255, 255, 255, 0.7),
+                 0 0 30px rgba(255, 255, 255, 0.7);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.dev {
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: white;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9))
+           drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+}
+
+button {
+    position: relative;
+    padding: 12px 60px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 6px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+                    0 0 20px rgba(255, 255, 255, 0.4),
+                    0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+                    0 0 25px rgba(255, 255, 255, 0.6),
+                    0 0 35px rgba(255, 255, 255, 0.6);
+    }
+}
+
+button:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+}
+
